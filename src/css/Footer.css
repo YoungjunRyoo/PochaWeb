@@ -1,0 +1,89 @@
+.footer {
+  background-color: hsl(356, 92%, 40%);        /* dark background for contrast */
+  color: #f1f1f1;                /* light text for readability */
+  padding: 2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.95rem;
+  border-top: 2px solid #e23e3e; /* optional red accent line */
+}
+
+.footer h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.footer p {
+  margin: 0.3rem 0;
+  line-height: 1.5;
+}
+
+.location,
+.contact-info,
+.business-hour {
+  flex: 1 1 250px;
+}
+
+/* ==========================================================
+   ✨ 내비바 영역과 완벽하게 분리된 푸터 전용 링크/아이콘 스타일 추가
+   ========================================================== */
+
+/* 1. 푸터 텍스트 링크 기본 스타일 (주소, 전화번호 공통) */
+.footer-link {
+  color: #f1f1f1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+/* ❌ 마우스를 올려도 네모 박스 배경이나 그림자가 절대 생기지 않음 */
+.footer-link:hover {
+  background-color: transparent !important; /* 배경 투명 강제 유지 */
+  box-shadow: none !important;             /* 그림자 효과 강제 차단 */
+  color: #3b82f6;                          /* 마우스 올렸을 때 글자만 파랗게 변경 */
+  text-decoration: underline;              /* 링크 느낌을 주는 밑줄 효과 */
+}
+
+/* 2. 푸터 SNS/구글맵 아이콘 링크 스타일 */
+.footer-insta-link {
+  display: inline-block;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+/* 아이콘 hover 시에도 네모 배경 없이 살짝 커지는 세련된 효과만 적용 */
+.footer-insta-link:hover {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  transform: scale(1.1);
+}
+
+/* 아이콘 이미지 크기 고정 */
+.footer-insta-icon {
+  height: 24px;
+  width: 24px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+/* ========================================================== */
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .location,
+  .contact-info,
+  .business-hour {
+    flex: none;
+  }
+}
